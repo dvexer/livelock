@@ -5,4 +5,6 @@ set(CMAKE_CXX_STANDARD 14)
 
 add_executable(LiveLock main.cpp)
 
-target_link_libraries(LiveLock -pthread)
+if (UNIX)
+    target_link_libraries(LiveLock -pthread)
+endif(UNIX)
